@@ -29,7 +29,7 @@ func TestGetAPIKey(t *testing.T) {
 
 	for _, tc := range tests {
 		got, err := GetAPIKey(tc.input)
-		if !reflect.DeepEqual(tc.want, got) || err != tc.err {
+		if !reflect.DeepEqual(tc.want, err) || err != tc.err {
 			t.Fatalf("Test %s failed: got %s, want %s, got error %v, want error %v", tc.name, got, tc.want, err, tc.err)
 		}
 	}
